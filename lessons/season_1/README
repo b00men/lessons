@@ -1,0 +1,51 @@
+4-й семестр обучения (Янв-Май 2012)
+Практическая часть работ по вводному курсу программирования на C++
+
+По темам:
+Потоковые операторы cout, cin, применение мат. формул. - lesson1
+Применение логических формул - lesson2
+Операторы ветвления if-else, ()?():(), switch-case - lesson2
+Циклы while-do, do-while - lesson3
+Цикл for - lesson4
+Функции - lesson6
+Побитовые операции - lesson7, lesson8
+Массивы lesson4, lesson5, lesson6, lesson7, lesson8
+
+По задачам:
+S круга по d, S прямоугольного трекгольника по катетам - lesson1
+Поиск max, день недели по его номеру - lesson2_1
+Логорифм большего по меньшему - lesson2_2
+Поиск корней уровнения a*x^4+b*x^2+c - lesson2_3
+Кратность двум, таблица истинности, прекращение ввода символом и сумма кодов,
+		поиск n!, перевод дней в часы - lesson3
+Расчет формулы n!/(n-k)!, таблица умножения (ЗСФВЧ), ввод массива,
+		определение кол-ва чет/нечет, поиск max, цикличное смещение - lesson4
+Перемножение матриц - lesson5
+Заполнение произвольной матрицы числами "вертикальной змейкой" - lesson5_2
+Сравнение 2х строк, нахождение длинны строки - lesson6
+Ввод\вывод бинарного вектора, маски, 0\1 в позицию - lesson7
+Ввод\вывод бинарной матрицы, еденичная матрица - lesson8 (old)
+
+Реализованные функции:
+./lesson8/main.h
+	int outmat(int a[], int n, int m);
+	int inmat(int a[],int n,int m);
+	string writemat(int a[], int n, int m);
+	int readmat(int a[],int n,int m,string str);
+	int edmat(int a[],int n,int m);
+	int proverka(int vecn[],int n, int N, unsigned int m, int k[], int size); 
+	int outvec(unsigned char a, int i);
+	int invec(unsigned char& a, int i);
+	string perebor(int vecn[],int n1, int n, int k[], int size, unsigned char options);
+	int summat(int vecn[],int k[], int n, int size);
+./lesson7.cpp
+	int outvec(unsigned short a);
+	unsigned char str2vec(char str[100]);
+	int invec(unsigned short& a);
+	int true2k(unsigned short& a,int k);
+	int false2k(unsigned short& a,int k);
+	int mask(unsigned short& a,int k);
+	int invmask(unsigned short& a,int k);
+./lesson6.cpp
+	int groupcmp(char w1[100], char w2[100]);
+	int grouplen(char mas[]);
