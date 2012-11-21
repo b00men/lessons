@@ -2,4 +2,5 @@ lesson1 - перестановка (result: while_file_notopt.cpp)
 lesson2 - сочетания
 lesson3 - задача назначений
 lesson4 - задача на ферзей (невыполнено, todo: сделать с _крутой_ псевдографикой)
-lesson5 - сортировка вставкой (result: programm.cpp - комбайн тестов, test4sort.cpp - наглядный тест сортировки)
+lesson5 - медленная сортировка вставкой (result: programm.cpp - комбайн тестов, test4sort.cpp - наглядный тест сортировки)
+lesson6 - быстрая сортировка Хоара
