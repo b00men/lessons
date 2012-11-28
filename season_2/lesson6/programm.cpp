@@ -9,10 +9,12 @@ void genvec_rand (int &mass_size, int *&mass);		// Generating rand vec.
 void genvec_anti (int &mass_size, int *&mass);		// Generating anti vec.
 void genvec_half (int &mass_size, int *&mass);		// Generating half rand vec.
 void swap (int &a, int &b);							// Swap two int el
-double sort (int &mass_size, int *&mass);			// Sort vecor. Use 'VSTAVKA' method. Return time of work (NO!) in sec. Depend on swap.
 void math (int &MofMS_size, int *&MofMS, int *&mass, int &type, int &no);
 								// Count middle score of sort some(mass,type) vector some(MofMS) size in some(no) iterration in second.
 								// Type of genvec: 1 - rand, 2 - anti, 3 - halfrand.
+void sort (int l, int r, int cent, int *&mass);             // Sort part of vecor. Use 'HOAR' method. Depend on swap.
+int find (int l, int r, int *&mass);                        // Find median.
+double wrap (int mass_size, int *&mass);
 
 int main( )
 {
@@ -38,7 +40,7 @@ void math (int &MofMS_size, int *&MofMS, int *&mass, int &type, int &no)
 	{
 		cout<<"Mass_size: "<<MofMS[i]<<" Time in sec: ";
 		// little ПОНТЫ
-		for (int j=0; j<no; (type==1)?(genvec_rand(MofMS[i],mass)):((type==2)?(genvec_anti(MofMS[i],mass)):(genvec_half(MofMS[i],mass))), t=t+sort(MofMS[i],mass)/CLOCKS_PER_SEC, j++);
+		for (int j=0; j<no; (type==1)?(genvec_rand(MofMS[i],mass)):((type==2)?(genvec_anti(MofMS[i],mass)):(genvec_half(MofMS[i],mass))), t=t+wrap(MofMS[i],mass)/CLOCKS_PER_SEC, j++);
 		t=t/no;
 		cout<<t<<'\n';	
 	}
@@ -46,16 +48,39 @@ void math (int &MofMS_size, int *&MofMS, int *&mass, int &type, int &no)
 	return;
 }
 
-double sort (int &mass_size, int *&mass)
+double wrap (int mass_size, int *&mass)
 {
 	clock_t start=clock();
-	for (int i=1; i<mass_size; i++)
-	{
-		for (int j=i-1; ((j>-1)&&(mass[j]>mass[j+1])); swap(mass[j],mass[j+1]), j--);
-	}
-	//for (int i=0;i<mass_size;cout<<mass[i]<<' ',i++); cout<<'\n'; // out to stdout
-	delete [] mass;
+    sort(0,mass_size-1,find(0,mass_size-1,mass),mass);
+    delete [] mass;
 	return (clock()-start);
+}
+
+void sort (int l, int r, int cent, int *&mass)
+{       
+        int i=l,j=r;
+        if ((l>r)||(l==r)) return;
+        while(true)
+        {       
+                for (; (i<j)&&(mass[i]<=cent); i++);
+                for (; (j>i)&&(mass[j]>cent); j--);
+                swap(mass[i],mass[j]);
+                if ((i+1==j)||(i==j)) break;
+        }
+        sort(l,j-1,find(l,j-1,mass),mass);
+        sort(j,r,find(j,r,mass),mass);        
+}
+
+int find (int l, int r, int *&mass)
+{
+        int min=mass[l], max=mass[l], median;
+        for (int i=l; i<r+1; i++)
+        {
+                if (min>mass[i]) min=mass[i];
+                if (max<mass[i]) max=mass[i];
+        }
+        median=(min+max)/2;
+        return median;
 }
 
 void readvec (int &mass_size, int *&mass)
