@@ -18,28 +18,29 @@ int main( )
         int mass_size=10, *mass;
         srand(time(NULL));
         genvec_rand(mass_size,mass);
-        cout<<find(0,mass_size-1,mass)<<'\n';
-        sort(0,mass_size-1,find(0,mass_size-1,mass),mass);
+        wrap(mass_size,mass);
         for (int i=0;i<mass_size;cout<<mass[i]<<' ',i++); cout<<'\n';
         return 0;
+}
+
+void wrap (int mass_size, int *&mass)
+{
+        sort(0,mass_size-1,find(0,mass_size-1,mass),mass);
 }
 
 void sort (int l, int r, int cent, int *&mass)
 {       
         int i=l,j=r;
+        if ((l>r)||(l==r)) return;
         while(true)
         {       
-                cout<<"i="<<i<<" j="<<j<<'\n';
-                for (; (i<j)&&(mass[i]<cent); i++);
+                for (; (i<j)&&(mass[i]<=cent); i++);
                 for (; (j>i)&&(mass[j]>cent); j--);
                 swap(mass[i],mass[j]);
                 if ((i+1==j)||(i==j)) break;
         }
-        if (l==r-1){
-        sort(l,i,find(l,i,mass),mass);
-        sort(j,r,find(j,r,mass),mass);
-        }
-        return;
+        sort(l,j-1,find(l,j-1,mass),mass);
+        sort(j,r,find(j,r,mass),mass);        
 }
 
 int find (int l, int r, int *&mass)
