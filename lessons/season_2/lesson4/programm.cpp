@@ -1,5 +1,6 @@
 #include <iostream>
 #include <fstream>
+#include <cstdlib>
 
 using namespace std;
 
@@ -34,7 +35,7 @@ int test_diag (int &mass_size, int *&vec, int *&min_vec, int &min_sum)
 	{
 		for (int j=i+1; j<mass_size-1; j++)
 		{
-			if (abs(vec[i]-vec[j])=abs(i-j))
+			if (abs(vec[i]-vec[j])==abs(i-j))
 			{
 				return 1;
 			}
