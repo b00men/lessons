@@ -1,0 +1,31 @@
+Numbers of iterations: 10
+Slow sort:
+Rand vec:
+Mass_size: 1000 Time in sec: 0.004
+Mass_size: 5000 Time in sec: 0.0994
+
+Slow sort:
+Anti vec:
+Mass_size: 1000 Time in sec: 0.007
+Mass_size: 5000 Time in sec: 0.2007
+
+Slow sort:
+Half rand vec:
+Mass_size: 1000 Time in sec: 0.001
+Mass_size: 5000 Time in sec: 0.0241
+
+Fast sort:
+Rand vec:
+Mass_size: 1000 Time in sec: 0
+Mass_size: 5000 Time in sec: 0.002
+
+Fast sort:
+Anti vec:
+Mass_size: 1000 Time in sec: 0
+Mass_size: 5000 Time in sec: 0.001
+
+Fast sort:
+Half rand vec:
+Mass_size: 1000 Time in sec: 0
+Mass_size: 5000 Time in sec: 0.002
+

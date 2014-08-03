@@ -1,0 +1,55 @@
+Numbers of iterations: 10
+Slow sort:
+Rand vec:
+Mass_size: 1000 Time in sec: 0.004
+Mass_size: 5000 Time in sec: 0.1004
+Mass_size: 10000 Time in sec: 0.41404
+Mass_size: 50000 Time in sec: 10.1904
+Mass_size: 100000 Time in sec: 41.862
+Mass_size: 500000 Time in sec: 1267.3
+
+Slow sort:
+Anti vec:
+Mass_size: 1000 Time in sec: 0.013
+Mass_size: 5000 Time in sec: 0.2803
+Mass_size: 10000 Time in sec: 1.00803
+Mass_size: 50000 Time in sec: 29.4428
+Mass_size: 100000 Time in sec: 120.968
+Mass_size: 500000 Time in sec: 2298.13
+
+Slow sort:
+Half rand vec:
+Mass_size: 1000 Time in sec: 0.002
+Mass_size: 5000 Time in sec: 0.0262
+Mass_size: 10000 Time in sec: 0.10362
+Mass_size: 50000 Time in sec: 2.53636
+Mass_size: 100000 Time in sec: 10.3706
+Mass_size: 500000 Time in sec: 259.44
+
+Fast sort:
+Rand vec:
+Mass_size: 1000 Time in sec: 0
+Mass_size: 5000 Time in sec: 0.002
+Mass_size: 10000 Time in sec: 0.0032
+Mass_size: 50000 Time in sec: 0.02132
+Mass_size: 100000 Time in sec: 0.047132
+Mass_size: 500000 Time in sec: 0.254713
+
+Fast sort:
+Anti vec:
+Mass_size: 1000 Time in sec: 0
+Mass_size: 5000 Time in sec: 0.001
+Mass_size: 10000 Time in sec: 0.0031
+Mass_size: 50000 Time in sec: 0.01231
+Mass_size: 100000 Time in sec: 0.028231
+Mass_size: 500000 Time in sec: 0.143823
+
+Fast sort:
+Half rand vec:
+Mass_size: 1000 Time in sec: 0
+Mass_size: 5000 Time in sec: 0.001
+Mass_size: 10000 Time in sec: 0.0041
+Mass_size: 50000 Time in sec: 0.01741
+Mass_size: 100000 Time in sec: 0.038741
+Mass_size: 500000 Time in sec: 0.200874
+
