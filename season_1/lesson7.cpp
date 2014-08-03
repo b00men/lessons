@@ -65,7 +65,7 @@ int true2k(unsigned short& a,int k) // 1 в k-ую позицию
 	return 0;
 }
 
-int false2k(unsigned short& a,int k) // 1 в k-ую позицию
+int false2k(unsigned short& a,int k) // 0 в k-ую позицию
 {
 	a=a&(~(1<<k));
 	return 0;
